@@ -408,8 +408,10 @@ ICFGEdge* ICFG::addRetEdge(ICFGNode* srcNode, ICFGNode* dstNode)
 /*!
  * Dump ICFG
  */
-void ICFG::dump(const std::string& file, bool simple)
+void ICFG::dump(std::string file, bool simple)
 {
+    if (file.empty())
+        file = PAG::getPAG()->getModuleIdentifier() + ".icfg";
     GraphPrinter::WriteGraphToFile(outs(), file, this, simple);
 }
 

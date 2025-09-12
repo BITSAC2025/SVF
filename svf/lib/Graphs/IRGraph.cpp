@@ -309,6 +309,8 @@ SVFStmt* IRGraph::hasLabeledEdge(SVFVar* src, SVFVar* dst, SVFStmt::PEDGEK kind,
  */
 void IRGraph::dump(std::string name)
 {
+    if (name.empty())
+        name = PAG::getPAG()->getModuleIdentifier() + ".pag";
     GraphPrinter::WriteGraphToFile(outs(), name, this);
 }
 

@@ -341,8 +341,10 @@ bool CallGraph::isReachableBetweenFunctions(const FunObjVar* srcFn, const FunObj
 /*!
  * Dump call graph into dot file
  */
-void CallGraph::dump(const std::string& filename)
+void CallGraph::dump(std::string filename)
 {
+    if (filename.empty())
+        filename = PAG::getPAG()->getModuleIdentifier() + ".cg";
     GraphPrinter::WriteGraphToFile(outs(), filename, this);
 }
 

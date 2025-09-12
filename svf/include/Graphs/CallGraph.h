@@ -463,7 +463,7 @@ public:
     bool isReachableBetweenFunctions(const FunObjVar* srcFn, const FunObjVar* dstFn) const;
 
     /// Dump the graph
-    void dump(const std::string& filename);
+    void dump(std::string filename = "");
 
     /// View the graph from the debugger
     void view();

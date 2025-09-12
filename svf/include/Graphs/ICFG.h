@@ -101,7 +101,7 @@ public:
     ICFGEdge* getICFGEdge(const ICFGNode* src, const ICFGNode* dst, ICFGEdge::ICFGEdgeK kind);
 
     /// Dump graph into dot file
-    void dump(const std::string& file, bool simple = false);
+    void dump(std::string file = "", bool simple = false);
 
     /// View graph from the debugger
     void view();

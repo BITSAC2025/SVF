@@ -340,7 +340,7 @@ public:
     void dumpSymTable();
 
     /// Dump SVFIR
-    void dump(std::string name);
+    void dump(std::string name = "");
 
     /// View graph from the debugger
     void view();

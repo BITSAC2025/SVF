@@ -177,7 +177,7 @@ public:
     }
 
     /// Get CG
-    inline const CallGraph* getCallGraph()
+    inline CallGraph* getCallGraph()
     {
         assert(callGraph && "empty CallGraph! Build SVF IR first!");
         return callGraph;
