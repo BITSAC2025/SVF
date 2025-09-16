@@ -54,7 +54,8 @@ private:
 
 public:
     /// Constructor
-    SVFIRBuilder(): pag(SVFIR::getPAG()), curBB(nullptr),curVal(nullptr)
+    SVFIRBuilder()
+        : pag(SVFIR::getPAG()), curBB(nullptr),curVal(nullptr)
     {
     }
     /// Destructor
@@ -62,7 +63,10 @@ public:
     {
     }
 
-    /// Start building SVFIR here
+    /**
+     * Build SVFIR, i.e., PAG
+     * @return a pointer pointing to a newly created PAG.
+     */
     virtual SVFIR* build();
 
     /// Return SVFIR

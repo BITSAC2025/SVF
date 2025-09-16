@@ -340,6 +340,11 @@ public:
     void dumpSymTable();
 
     /// Dump SVFIR
+
+    /**
+     * Dump SVFIR into a dot file
+     * @param name the file name to store the graph, using inputFileName + ".pag" as the default output file name.
+     */
     void dump(std::string name = "");
 
     /// View graph from the debugger

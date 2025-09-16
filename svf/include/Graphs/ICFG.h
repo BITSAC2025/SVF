@@ -100,7 +100,10 @@ public:
     /// Get a SVFG edge according to src and dst
     ICFGEdge* getICFGEdge(const ICFGNode* src, const ICFGNode* dst, ICFGEdge::ICFGEdgeK kind);
 
-    /// Dump graph into dot file
+    /**
+     * Dump ICFG into a dot file
+     * @param name the file name to store the graph, using inputFileName + ".icfg" as the default output file name.
+     */
     void dump(std::string file = "", bool simple = false);
 
     /// View graph from the debugger

@@ -144,7 +144,10 @@ public:
     // Build an SVF module from a given LLVM Module instance (for use e.g. in a LLVM pass)
     static void buildSVFModule(Module& mod);
 
-    // Build an SVF module from the bitcode files provided in `moduleNameVec`
+    /**
+     * Build an SVF module from the bitcode files provided in `moduleNameVec`
+     * @param moduleNameVec input file names
+     */
     static void buildSVFModule(const std::vector<std::string>& moduleNameVec);
 
     static void preProcessBCs(std::vector<std::string>& moduleNameVec);

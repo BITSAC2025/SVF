@@ -70,9 +70,15 @@ protected:
     virtual bool canSet(void) const = 0;
 
 public:
-    /// Parse all constructed OptionBase children, returning positional arguments
-    /// in the order they appeared.
-    static std::vector<std::string> parseOptions(int argc, char *argv[], std::string description, std::string callFormat)
+    /**
+     * Parse all constructed OptionBase children, returning positional arguments in the order they appeared.
+     * @param argc number of arguments
+     * @param argv arguments
+     * @param description of usage
+     * @param callFormat of usage
+     * @return positional arguments (input files)
+     */
+    static std::vector<std::string> parseOptions(int argc, char *argv[], std::string description = "", std::string callFormat = "")
     {
         const std::string usage = buildUsage(description, std::string(argv[0]), callFormat);
 

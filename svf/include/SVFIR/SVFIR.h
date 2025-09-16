@@ -160,6 +160,9 @@ public:
     {
         icfg = i;
     }
+    /**
+     * Get the interprocedural control flow graph.
+     */
     inline ICFG* getICFG() const
     {
         assert(icfg->totalICFGNode>0 && "empty ICFG! Build SVF IR first!");
@@ -176,7 +179,7 @@ public:
         return chgraph;
     }
 
-    /// Get CG
+    /// Get the call graph
     inline CallGraph* getCallGraph()
     {
         assert(callGraph && "empty CallGraph! Build SVF IR first!");
