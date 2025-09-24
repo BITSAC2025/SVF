@@ -158,7 +158,7 @@ public:
     {
         // Loop over the graph, printing it out...
         for (const auto Node : nodes<GraphType>(G))
-            if (!isNodeHidden(Node))
+//            if (!isNodeHidden(Node))
                 writeNode(Node);
     }
 
