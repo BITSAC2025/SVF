@@ -95,10 +95,12 @@ public:
     {
         return edgeFlag;
     }
+    /// Get the source node of an edge
     NodeType* getSrcNode() const
     {
         return src;
     }
+    /// Get the target node of an edge
     NodeType* getDstNode() const
     {
         return dst;
@@ -175,17 +177,16 @@ public:
             delete edge;
     }
 
-    /// Get incoming/outgoing edge set
-    ///@{
+    /// Get outgoing edge set
     inline const GEdgeSetTy& getOutEdges() const
     {
         return OutEdges;
     }
+    /// Get incoming edge set
     inline const GEdgeSetTy& getInEdges() const
     {
         return InEdges;
     }
-    ///@}
 
     /// Has incoming/outgoing edge set
     //@{

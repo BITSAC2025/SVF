@@ -78,7 +78,7 @@ public:
     /// Destructor
     ~ICFG() override;
 
-    /// Get a ICFG node
+    /// Get an ICFG node via a node ID
     inline ICFGNode* getICFGNode(NodeID id) const
     {
         return getGNode(id);

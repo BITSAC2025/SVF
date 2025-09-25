@@ -156,7 +156,7 @@ public:
 
     }
 
-    /// Get ID
+    /// Get node ID
     inline NodeID getId() const
     {
         return id;
