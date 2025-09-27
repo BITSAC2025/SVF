@@ -307,11 +307,15 @@ SVFStmt* IRGraph::hasLabeledEdge(SVFVar* src, SVFVar* dst, SVFStmt::PEDGEK kind,
 /*!
  * Dump this IRGraph
  */
-void IRGraph::dump(std::string name)
+void IRGraph::dump(const std::string& name)
 {
-    if (name.empty())
-        name = PAG::getPAG()->getModuleIdentifier() + ".pag";
     GraphPrinter::WriteGraphToFile(outs(), name, this);
+}
+
+void IRGraph::dump()
+{
+    auto name = PAG::getPAG()->getModuleIdentifier() + ".pag";
+    dump(name);
 }
 
 /*!

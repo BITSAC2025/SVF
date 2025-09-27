@@ -588,9 +588,15 @@ bool ConstraintGraph::moveOutEdgesToRepNode(ConstraintNode*node, ConstraintNode*
 /*!
  * Dump constraint graph
  */
-void ConstraintGraph::dump(std::string name)
+void ConstraintGraph::dump(const std::string& name)
 {
     GraphPrinter::WriteGraphToFile(outs(), name, this);
+}
+
+void ConstraintGraph::dump()
+{
+    auto fname = PAG::getPAG()->getModuleIdentifier() + ".consg";
+    dump(fname);
 }
 
 /*!

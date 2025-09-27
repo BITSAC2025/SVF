@@ -462,8 +462,13 @@ public:
     /// Whether its reachable between two functions
     bool isReachableBetweenFunctions(const FunObjVar* srcFn, const FunObjVar* dstFn) const;
 
-    /// Dump the graph
-    void dump(std::string filename = "");
+    /**
+     * Dump call graph into a dot file
+     * @param name the file name to store the graph.
+     */
+    void dump(const std::string& filename);
+    /// Dump call graph to "inputFileName.cg".
+    void dump();
 
     /// View the graph from the debugger
     void view();

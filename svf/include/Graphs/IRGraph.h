@@ -343,9 +343,11 @@ public:
 
     /**
      * Dump SVFIR into a dot file
-     * @param name the file name to store the graph, using inputFileName + ".pag" as the default output file name.
+     * @param name the file name to store the graph.
      */
-    void dump(std::string name = "");
+    void dump(const std::string& name);
+    ///  Dump SVFIR to "inputFileName.pag".
+    void dump();
 
     /// View graph from the debugger
     void view();

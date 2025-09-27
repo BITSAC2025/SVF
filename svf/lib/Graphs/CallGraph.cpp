@@ -338,15 +338,15 @@ bool CallGraph::isReachableBetweenFunctions(const FunObjVar* srcFn, const FunObj
     return false;
 }
 
-    /**
-     * Dump call graph into a dot file
-     * @param name the file name to store the graph, using inputFileName + ".cg" as the default output file name.
-     */
-void CallGraph::dump(std::string filename)
+void CallGraph::dump(const std::string& filename)
 {
-    if (filename.empty())
-        filename = PAG::getPAG()->getModuleIdentifier() + ".cg";
     GraphPrinter::WriteGraphToFile(outs(), filename, this);
+}
+
+void CallGraph::dump()
+{
+    auto filename = PAG::getPAG()->getModuleIdentifier() + ".cg";
+    dump(filename);
 }
 
 void CallGraph::view()

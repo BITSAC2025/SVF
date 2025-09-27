@@ -102,9 +102,11 @@ public:
 
     /**
      * Dump ICFG into a dot file
-     * @param name the file name to store the graph, using inputFileName + ".icfg" as the default output file name.
+     * @param name the file name to store the graph.
      */
-    void dump(std::string file = "", bool simple = false);
+    void dump(const std::string& file, bool simple = false);
+    /// Dump ICFG to "inputFileName.icfg".
+    void dump();
 
     /// View graph from the debugger
     void view();

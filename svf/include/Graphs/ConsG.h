@@ -368,8 +368,14 @@ public:
     }
     //@}
 
-    /// Dump graph into dot file
-    void dump(std::string name);
+    /**
+     * Dump constraint graph into a dot file
+     * @param name the file name to store the graph.
+     */
+    void dump(const std::string& name);
+    ///  Dump constraint graph to "inputFileName.consg".
+    void dump();
+
     /// Print CG into terminal
     void print();
 
