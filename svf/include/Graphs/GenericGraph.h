@@ -373,7 +373,7 @@ public:
         for (auto &entry : IDToNodeMap)
             delete entry.second;
     }
-    /// Iterators
+    /// Iterators for traversing nodes
     //@{
     inline iterator begin()
     {

@@ -321,6 +321,32 @@ public:
         const BaseObjVar* baseObj = pag->getBaseObject(id);
         return (baseObj->getMaxFieldOffsetLimit() == 1);
     }
+
+    /**
+     * Get a field of a memory object
+     * @param id a pointee node ID
+     * @param gep the GEP edge
+     * @return a field object node ID of the pointee
+     */
+    inline NodeID getGepObjVar(NodeID id, const GepCGEdge* gep)
+    {
+        if (auto ngep = SVFUtil::dyn_cast<NormalGepCGEdge>(gep))
+        {
+            auto apOffset = ngep->getAccessPath().getConstantStructFldIdx();
+            return getGepObjVar(id, apOffset);
+        }
+        else
+        {
+            if (isBlkObjOrConstantObj(id))
+                return id;
+            else
+            {
+                NodeID baseId = getFIObjVar(id);
+                return baseId;
+            }
+        }
+    }
+
     /// Get a field of a memory object
     inline NodeID getGepObjVar(NodeID id, const APOffset& apOffset)
     {

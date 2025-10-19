@@ -98,8 +98,7 @@ public:
         return (kind == ConstraintEdge::Load || kind == ConstraintEdge::Store);
     }
 
-    /// Return constraint edges
-    //@{
+
     inline const ConstraintEdge::ConstraintEdgeSetTy& getDirectInEdges() const
     {
         return directInEdges;
@@ -108,46 +107,29 @@ public:
     {
         return directOutEdges;
     }
+
+    /// Get edges of different types
+    //@{
     inline const ConstraintEdge::ConstraintEdgeSetTy& getCopyInEdges() const
-    {
-        return copyInEdges;
-    }
+    {        return copyInEdges;    }
     inline const ConstraintEdge::ConstraintEdgeSetTy& getCopyOutEdges() const
-    {
-        return copyOutEdges;
-    }
+    {        return copyOutEdges;    }
     inline const ConstraintEdge::ConstraintEdgeSetTy& getGepInEdges() const
-    {
-        return gepInEdges;
-    }
+    {        return gepInEdges;    }
     inline const ConstraintEdge::ConstraintEdgeSetTy& getGepOutEdges() const
-    {
-        return gepOutEdges;
-    }
+    {        return gepOutEdges;    }
     inline const ConstraintEdge::ConstraintEdgeSetTy& getLoadInEdges() const
-    {
-        return loadInEdges;
-    }
+    {        return loadInEdges;    }
     inline const ConstraintEdge::ConstraintEdgeSetTy& getLoadOutEdges() const
-    {
-        return loadOutEdges;
-    }
+    {        return loadOutEdges;    }
     inline const ConstraintEdge::ConstraintEdgeSetTy& getStoreInEdges() const
-    {
-        return storeInEdges;
-    }
+    {        return storeInEdges;    }
     inline const ConstraintEdge::ConstraintEdgeSetTy& getStoreOutEdges() const
-    {
-        return storeOutEdges;
-    }
+    {        return storeOutEdges;    }
     inline const ConstraintEdge::ConstraintEdgeSetTy& getAddrInEdges() const
-    {
-        return addressInEdges;
-    }
+    {        return addressInEdges;    }
     inline const ConstraintEdge::ConstraintEdgeSetTy& getAddrOutEdges() const
-    {
-        return addressOutEdges;
-    }
+    {        return addressOutEdges;    }
     //@}
 
     ///  Iterators
