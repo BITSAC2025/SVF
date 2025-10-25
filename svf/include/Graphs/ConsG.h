@@ -121,6 +121,22 @@ public:
     }
     //@}
 
+    /// Return whether the corresponding node of id is a function
+    bool isFunction(NodeID id) const
+    {
+        const BaseObjVar* obj = pag->getBaseObject(id);
+        return obj->isFunction();
+    }
+
+    /// Return the function object corresponding to id
+    const FunObjVar* getFunction(NodeID id) const
+    {
+        if (!isFunction(id))
+            return nullptr;
+        auto fun = SVFUtil::cast<FunObjVar>(pag->getBaseObject(id))->getFunction();
+        return fun->getDefFunForMultipleModule();
+    }
+
     //// Return true if this edge exits
     inline bool hasEdge(ConstraintNode* src, ConstraintNode* dst, ConstraintEdge::ConstraintEdgeK kind)
     {
@@ -296,6 +312,7 @@ public:
 
     /// Wrappers for invoking SVFIR methods
     //@{
+    /// Return indirect call sites
     inline const SVFIR::CallSiteToFunPtrMap& getIndirectCallsites() const
     {
         return pag->getIndirectCallsites();

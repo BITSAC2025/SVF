@@ -447,10 +447,8 @@ public:
     //@}
 
 
-    /// Add indirect call edges
-    //@{
+    /// Add an indirect call edge from callerFun to calleeFun
     void addIndirectCallGraphEdge(const CallICFGNode* cs,const FunObjVar* callerFun, const FunObjVar* calleeFun);
-    //@}
 
     /// Get callsites invoking the callee
     //@{

@@ -204,7 +204,7 @@ CallGraphEdge* CallGraph::getGraphEdge(CallGraphNode* src,
 
 
 /*!
- * Add indirect call edge to update call graph
+ * Add an indirect call edge from callerFun to calleeFun
  */
 void CallGraph::addIndirectCallGraphEdge(const CallICFGNode* cs,const FunObjVar* callerFun, const FunObjVar* calleeFun)
 {
